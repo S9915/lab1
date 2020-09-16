@@ -8,4 +8,9 @@ def jaccard(set1: set, set2: set) -> float:
     return intersec_size / union_size
 
 if __name__ == '__main__':
-    print("Метрика Жаккарда: " + str(jaccard({1, 2, 3}, {2, 4, 5})))
+    import random as rnd
+    for i in range(1):
+        set1 = set([rnd.randint(1, 15) for i in range(rnd.randint(5, 10))])
+        set2 = set([rnd.randint(1, 15) for i in range(rnd.randint(5, 10))])
+        print(f"set 1: {set1}", f"set 2: {set2}", '', sep='\n')
+    print("Метрика Жаккарда: " + str({round(jaccard(set1, set2), 3)}))
